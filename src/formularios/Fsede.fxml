@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="334.0" prefWidth="257.0" style="-fx-background-color: #4baff2;" stylesheets="@../Otros/fullpackstyling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fcontroladores.FsedeController">
+   <children>
+      <VBox prefHeight="334.0" prefWidth="257.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="257.0">
+               <children>
+                  <Label fx:id="label" text="Registrar Sede" textFill="WHITE" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="257.0" spacing="10.0">
+               <children>
+                  <Label text="Region" textFill="WHITE" />
+                  <ChoiceBox fx:id="regiones" prefHeight="28.0" prefWidth="94.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="70.0" prefHeight="60.0" prefWidth="257.0" spacing="10.0">
+               <children>
+                  <Label text="Nombre" textFill="WHITE" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="60.0" prefWidth="257.0" spacing="10.0">
+               <children>
+                  <JFXTextField fx:id="text" styleClass="jftextfield" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="190.0" prefHeight="60.0" prefWidth="257.0" spacing="10.0">
+               <children>
+                  <JFXButton fx:id="cancel" text="Cancelar" />
+                  <JFXButton fx:id="regis" text="Registrar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

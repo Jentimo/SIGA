@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="fondo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="862.0" stylesheets="@../Otros/fullpackstyling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ReporteController">
+   <top>
+      <MenuBar fx:id="Mymenu" BorderPane.alignment="CENTER">
+        <menus>
+            <Menu fx:id="Service" mnemonicParsing="false" text="Sevicio ">
+              <items>
+                <MenuItem fx:id="Report" mnemonicParsing="false" text="Reporte" />
+                  <MenuItem fx:id="PC" mnemonicParsing="false" text="Computador" />
+                  <MenuItem fx:id="Active" mnemonicParsing="false" text="Actividades" />
+              </items>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/servicio-tecnico.png" />
+                     </image></ImageView>
+               </graphic>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TableView fx:id="Tablew" prefHeight="447.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="c0" prefWidth="41.0" text="N" />
+          <TableColumn fx:id="c1" prefWidth="97.0" text="Fecha inicio" />
+            <TableColumn fx:id="c2" prefWidth="101.0" text="Fecha  culmi." />
+            <TableColumn fx:id="c3" prefWidth="97.33331298828125" text="Computador" />
+            <TableColumn fx:id="c4" prefWidth="105.33334350585938" text="Departamento" />
+            <TableColumn fx:id="c5" prefWidth="80.66668701171875" text="Sede" />
+            <TableColumn fx:id="c6" prefWidth="85.33331298828125" text="Actividad" />
+            <TableColumn fx:id="c7" editable="false" prefWidth="111.33331298828125" text="Usuario" />
+        </columns>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem fx:id="ReportA" mnemonicParsing="false" text="Generar Reporte de Actividad" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+   </center>
+   <right>
+      <VBox alignment="CENTER" prefHeight="376.0" prefWidth="144.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Sede" />
+            <JFXComboBox fx:id="SEDES" prefHeight="22.0" prefWidth="229.0" />
+            <JFXTextField fx:id="Filtro" alignment="CENTER" labelFloat="true" promptText="Filtro">
+               <font>
+                  <Font name="Roboto Black" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="Create" prefHeight="59.0" prefWidth="153.0" text="Registrar">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/boligrafo.png" />
+                     </image></ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="Update" layoutX="10.0" layoutY="315.0" prefHeight="59.0" prefWidth="153.0" text="Modificar">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/actualizar-flecha.png" />
+                     </image></ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="Read" layoutX="10.0" layoutY="144.0" prefHeight="59.0" prefWidth="153.0" text="Ver">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/ver-detalles.png" />
+                     </image></ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="Make_Report" layoutX="10.0" layoutY="336.0" prefHeight="59.0" prefWidth="153.0" text="Crear Reporte">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/libro-abierto.png" />
+                     </image></ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

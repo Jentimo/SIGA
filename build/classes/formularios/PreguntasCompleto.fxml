@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="394.0" prefWidth="495.0" style="-fx-background-color: #4baff2;" stylesheets="@../Otros/fullpackstyling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fcontroladores.PreguntasCompletoController">
+   <children>
+      <Label layoutX="123.0" layoutY="14.0" text="Registro de Preguntas de Recuperacion" textFill="WHITE" AnchorPane.topAnchor="14.0" />
+      <Label layoutX="14.0" layoutY="155.0" text="Segundo Apellido de su Madre" textFill="WHITE" />
+      <JFXPasswordField fx:id="R1" layoutX="244.0" layoutY="62.0" prefHeight="22.0" prefWidth="221.0" />
+      <Label layoutX="14.0" layoutY="108.0" text="¿Cuantos hermanos tiene?" textFill="WHITE" />
+      <JFXPasswordField fx:id="R2" layoutX="224.0" layoutY="106.0" prefHeight="22.0" prefWidth="241.0" />
+      <Label layoutX="12.0" layoutY="208.0" text="año de graduación de bachiller" textFill="WHITE" />
+      <JFXPasswordField fx:id="R3" layoutX="244.0" layoutY="153.0" prefHeight="22.0" prefWidth="221.0" />
+      <Label layoutX="14.0" layoutY="64.0" text="nombre de su abuela materna" textFill="WHITE" />
+      <JFXPasswordField fx:id="R5" layoutX="244.0" layoutY="255.0" prefHeight="22.0" prefWidth="221.0" />
+      <JFXCheckBox fx:id="ShowPass" checkedColor="#9e9696" layoutX="172.0" layoutY="298.0" text="Mostrar Respuestas" textFill="WHITE">
+         <font>
+            <Font name="Roboto Black" size="14.0" />
+         </font>
+      </JFXCheckBox>
+      <JFXButton fx:id="Go" layoutX="191.0" layoutY="335.0" prefHeight="37.0" prefWidth="106.0" text="Registrar" AnchorPane.bottomAnchor="22.0" />
+      <Label layoutX="16.0" layoutY="257.0" text="nombre de su abuelo paterno" textFill="WHITE" />
+      <JFXPasswordField fx:id="R4" layoutX="244.0" layoutY="206.0" prefHeight="22.0" prefWidth="221.0" />
+      <JFXTextField fx:id="T1" layoutX="244.0" layoutY="62.0" prefHeight="22.0" prefWidth="221.0" styleClass="jftextfield2" />
+      <JFXTextField fx:id="T2" layoutX="228.0" layoutY="106.0" prefHeight="22.0" prefWidth="241.0" styleClass="jftextfield2" />
+      <JFXTextField fx:id="T3" layoutX="243.0" layoutY="153.0" prefHeight="22.0" prefWidth="221.0" styleClass="jftextfield2" />
+      <JFXTextField fx:id="T4" layoutX="248.0" layoutY="206.0" prefHeight="22.0" prefWidth="216.0" styleClass="jftextfield2" />
+      <JFXTextField fx:id="T5" layoutX="244.0" layoutY="255.0" prefHeight="22.0" prefWidth="221.0" styleClass="jftextfield2" />
+   </children>
+</AnchorPane>

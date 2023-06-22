@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="198.0" prefWidth="565.0" style="-fx-background-color: #4baff2;" stylesheets="@../Otros/fullpackstyling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="verContro.DatosUserController">
+   <children>
+      <Label contentDisplay="CENTER" layoutX="220.0" layoutY="14.0" text="Datos Generales" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Roboto Black" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="Usuario" layoutX="201.0" layoutY="47.0" styleClass="label2" text="Usuario: Jose Timaure" textFill="WHITE" wrapText="true" />
+      <Label layoutX="321.0" layoutY="91.0" text="Fecha de Registro:" textFill="WHITE" wrapText="true" />
+      <Label layoutX="20.0" layoutY="167.0" text="Ultima modificacion:" textFill="WHITE" wrapText="true" />
+      <Label layoutX="22.0" layoutY="128.0" text="Total de reportes registrados" textFill="WHITE" wrapText="true" />
+      <Label layoutX="22.0" layoutY="91.0" text="Registrado Por:" textFill="WHITE" wrapText="true" />
+      <Label fx:id="Registrado" layoutX="138.0" layoutY="91.0" prefHeight="18.0" prefWidth="166.0" text="Jose Timaure" wrapText="true" />
+      <Label fx:id="fechaRegstro" layoutX="453.0" layoutY="91.0" prefHeight="18.0" prefWidth="93.0" text="02-05-2022" wrapText="true" />
+      <Label fx:id="reportes" layoutX="226.0" layoutY="128.0" text="0000" />
+      <Label fx:id="ultimaModificacion" layoutX="183.0" layoutY="167.0" text="00-00-0000" />
+      <Label layoutX="295.0" layoutY="128.0" text="Nivel de acceso" textFill="WHITE" />
+      <Label fx:id="nivel" layoutX="409.0" layoutY="128.0" prefHeight="20.0" prefWidth="128.0" text="Administrador" />
+      <Label layoutX="283.0" layoutY="167.0" text="Modificado Por:" textFill="WHITE" />
+      <Label fx:id="modificadoPor" layoutX="399.0" layoutY="167.0" prefHeight="18.0" prefWidth="166.0" text="Jose Timaure" wrapText="true" />
+   </children>
+</AnchorPane>

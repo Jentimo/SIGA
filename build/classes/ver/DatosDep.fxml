@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="230.0" prefWidth="620.0" style="-fx-background-color: #4baff2;" stylesheets="@../Otros/fullpackstyling.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="verContro.DatosDepController">
+   <children>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER" prefHeight="53.0" prefWidth="600.0">
+               <children>
+                  <Label text="Datos Generales" textFill="WHITE" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="53.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label fx:id="ObjetoT" text="Departamento:" textFill="WHITE" />
+                  <Label fx:id="Nombre" text="Recursos Humanos" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="63.0" prefHeight="53.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="Registrado Por:" textFill="WHITE" />
+                  <Label fx:id="RegistradoP" prefHeight="18.0" prefWidth="182.0" text="Jose Timaure" />
+                  <Label text="Fecha de Registro:" textFill="WHITE" />
+                  <Label fx:id="FechaR" text="00/00/0000" />
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="116.0" prefHeight="53.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="Ultima Modificacion" textFill="WHITE" />
+                  <Label fx:id="LastU" prefHeight="18.0" prefWidth="95.0" text="00/00/0000" />
+                  <Label text="Modificado por:" textFill="WHITE" />
+                  <Label fx:id="Uby" prefHeight="18.0" prefWidth="178.0" text="Jose Timaure" />
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

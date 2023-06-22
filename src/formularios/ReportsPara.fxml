@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="475.0" prefWidth="506.0" style="-fx-background-color: #4baff2;" stylesheets="@../Otros/fullpackstyling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fcontroladores.ReportsParaController">
+   <children>
+      <VBox prefHeight="475.0" prefWidth="506.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="506.0">
+               <children>
+                  <Label text="Reportes" textFill="WHITE" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="83.0" prefWidth="506.0" spacing="10.0">
+               <children>
+                  <Label text="Tipo de Reporte" textFill="WHITE" />
+                  <JFXComboBox fx:id="REPORTYPE" prefHeight="22.0" prefWidth="156.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="83.0" prefWidth="506.0" spacing="10.0">
+               <children>
+                  <Label text="Sede" textFill="WHITE" />
+                  <JFXComboBox fx:id="SEDE" prefHeight="22.0" prefWidth="182.0" />
+                  <Label />
+                  <JFXCheckBox fx:id="REGIONAL" checkedColor="#9e9696" styleClass="CheckBox" text="Region" textFill="WHITE" />
+                  <JFXComboBox fx:id="regiones" layoutX="55.0" layoutY="40.0" prefHeight="22.0" prefWidth="139.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="60.0" prefHeight="83.0" prefWidth="506.0" spacing="10.0">
+               <children>
+                  <Label prefHeight="20.0" prefWidth="57.0" text="Mes" textFill="WHITE" />
+                  <JFXComboBox fx:id="MONTHS" prefHeight="22.0" prefWidth="95.0" />
+                  <Label prefHeight="20.0" prefWidth="71.0" text="Trimestre" textFill="WHITE" />
+                  <JFXComboBox fx:id="TRI" prefHeight="22.0" prefWidth="98.0" />
+                  <Label prefHeight="20.0" prefWidth="34.0" text="Año" textFill="WHITE" />
+                  <Spinner fx:id="YEARS" prefHeight="25.0" prefWidth="120.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="60.0" prefHeight="83.0" prefWidth="506.0" spacing="10.0">
+               <children>
+                  <Label text="Parametro" textFill="WHITE" />
+                  <JFXCheckBox fx:id="GENERAL" checkedColor="#9e9696" styleClass="CheckBox" text="General" textFill="WHITE" />
+                  <JFXCheckBox fx:id="DEP" checkedColor="#9e9696" styleClass="CheckBox" text="Departamento" textFill="WHITE" />
+                  <JFXComboBox fx:id="Depas" prefHeight="22.0" prefWidth="182.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ButtonBar prefHeight="99.0" prefWidth="251.0">
+                    <buttons>
+                        <JFXButton fx:id="Cancelar" text="Cancelar" />
+                        <JFXButton fx:id="generar" text="Generar Reporte" />
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

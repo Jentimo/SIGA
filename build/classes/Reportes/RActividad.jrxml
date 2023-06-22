@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RActividad" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9c9d1a50-5add-4cc0-b358-77afaea22a3f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGA"/>
+	<parameter name="IDReport" class="java.lang.Integer"/>
+	<parameter name="LOGO" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT servicio.id_report AS ID,computador.nombre as Computador,sede.nombre as Sede, departamento.nombre as departamento, servicio.Fecha_i as inicio, servicio.fecha_f as finalizado, servicio.descrip as Descipcion, actividad.nombre as actividad, region.nombre as region, servicio.id_Usuario as IDUser, usuario.nombre as usuario
+FROM departamento,actividad, usuario, 
+servicio INNER JOIN computador ON servicio.id_compu=computador.id_compu 
+INNER JOIN depsed ON computador.id_sed_dep=depsed.id_dep_sed 
+INNER JOIN sede on depsed.id_sed=sede.id_sede
+INNER JOIN region ON sede.id_region=region.id_region
+where depsed.id_dep=departamento.id_dep
+ AND servicio.id_actividad=actividad.id_actividad
+  AND servicio.id_Usuario=usuario.cedula
+  AND servicio.id_report like $P{IDReport}]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="servicio"/>
+	</field>
+	<field name="Computador" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Computador"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="computador"/>
+	</field>
+	<field name="Sede" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Sede"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sede"/>
+	</field>
+	<field name="departamento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="departamento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="departamento"/>
+	</field>
+	<field name="inicio" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="inicio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="servicio"/>
+	</field>
+	<field name="finalizado" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="finalizado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="servicio"/>
+	</field>
+	<field name="Descipcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Descipcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="servicio"/>
+	</field>
+	<field name="actividad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="actividad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="actividad"/>
+	</field>
+	<field name="region" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="region"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="region"/>
+	</field>
+	<field name="IDUser" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="IDUser"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="servicio"/>
+	</field>
+	<field name="usuario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="usuario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="usuario"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="117" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="80" height="80" uuid="f532cc3b-811c-44b5-bf27-7f815ea5283b"/>
+				<imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="112" y="30" width="330" height="30" uuid="ff164f3b-a702-467e-9924-10aa8d70d625"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Instituto Venezolano de los Seguros Sociales ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="0" width="305" height="30" uuid="73eb86ff-564d-4be5-b20f-56823a944ced"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ministerio del Poder Popular para la progresion del Trabajo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="112" y="50" width="330" height="30" uuid="1b0a21ac-9657-47c6-a290-b46ed9591a62"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Sede}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="177" y="80" width="200" height="20" uuid="3ceec9ee-5283-4a26-9c31-ff250f91df53"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Departamento de Informatica]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="10" width="150" height="21" uuid="98959cf3-cb92-4a31-9bce-41367050a2bd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Actividad]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="10" width="100" height="20" uuid="2cfee3b7-8e25-469d-8fcf-5d5b23590146"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="280">
+			<textField>
+				<reportElement x="60" y="15" width="90" height="16" uuid="c782851d-c369-419f-a2e3-f4fa81bfecdb"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{region}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="15" width="60" height="16" uuid="c9b4d074-9817-42a8-8019-a6b467ccbadc"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Region:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="105" width="215" height="20" uuid="1abde1bf-6f07-4e9a-a15c-6535bab71752"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{actividad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="105" width="70" height="20" uuid="4f0a1e5c-b8b6-4f1a-988f-d6f42d594be1"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Actividad:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="145" width="65" height="20" uuid="790613bf-818c-45f6-812e-344c4b1e1775"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="145" width="100" height="20" uuid="b8506cb4-38c5-4b01-9ae0-cb3dfeea4d74"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Inicio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="145" width="55" height="20" uuid="dd776551-0520-4206-9a81-9d810df2bfa1"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{finalizado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="212" y="145" width="140" height="20" uuid="982eb4df-f10c-4234-a27c-c44c158a9cd5"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Culminacion:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="260" y="13" width="130" height="20" uuid="2feb4cdc-d229-4df7-bab3-5beb0b386143"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{usuario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="205" y="13" width="60" height="20" uuid="ab224ced-a77f-4c48-923d-944c525ff6e8"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Usuario:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="13" width="100" height="20" uuid="46e4e9a2-bf3f-49e1-8eba-03cfa4c34d50"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{IDUser}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="65" width="150" height="20" uuid="6a0ea481-18c3-4f10-a104-b81df7830512"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Computador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="307" y="65" width="100" height="20" uuid="2f34a570-7412-4e9f-b2f3-d6095ad330cc"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Computador:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="5" y="195" width="550" height="85" uuid="c29696a0-259d-4d90-a8cc-17e580016a41"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Descipcion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="65" width="100" height="20" uuid="ccc6a586-016e-4b0e-8690-5f447272e57c"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Departamento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="65" width="175" height="20" uuid="8b635860-fe73-43e7-a0f4-e3acc64c23e8"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{departamento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="410" y="13" width="42" height="18" uuid="27ce8ea1-63a0-4f32-ab6c-c8edebb1cf72"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CI: ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="525" y="16" width="30" height="30" uuid="e894faaf-9be3-4848-94da-77e03736fb1c"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

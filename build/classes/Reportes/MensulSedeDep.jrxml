@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MensulSedeDep" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ff6aa1c6-191f-45bc-a14f-fd23082f89f7">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SIGA"/>
+	<parameter name="ANIO" class="java.lang.Integer"/>
+	<parameter name="DEP" class="java.lang.String"/>
+	<parameter name="SEDE" class="java.lang.String"/>
+	<parameter name="MES" class="java.lang.Integer"/>
+	<parameter name="LOGO" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT actividad.nombre as Actividad,
+sede.nombre as Sede,
+ELT(MONTH(servicio.fecha_f), 'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre') as Mes,
+ region.nombre as Region,
+  COUNT(servicio.id_actividad)as Totales 
+  FROM actividad,departamento,servicio INNER JOIN computador ON servicio.id_compu=computador.id_compu 
+  INNER JOIN depsed ON computador.id_sed_dep=depsed.id_dep_sed
+   INNER JOIN sede on depsed.id_sed=sede.id_sede 
+   INNER JOIN region ON sede.id_region=region.id_region 
+   WHERE servicio.id_actividad=actividad.id_actividad 
+   AND YEAR(servicio.fecha_f)=$P{ANIO}
+   AND MONTH(servicio.fecha_f)=$P{MES}
+    AND sede.nombre=$P{SEDE}
+      AND depsed.id_dep=departamento.id_dep
+    AND departamento.nombre=$P{DEP}
+     GROUP By servicio.id_actividad]]>
+	</queryString>
+	<field name="Actividad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Actividad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="actividad"/>
+	</field>
+	<field name="Sede" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Sede"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sede"/>
+	</field>
+	<field name="Mes" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Mes"/>
+	</field>
+	<field name="Region" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Region"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="region"/>
+	</field>
+	<field name="Totales" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Totales"/>
+	</field>
+	<variable name="Totales1" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{Totales}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="112" y="30" width="330" height="30" uuid="8b6974b6-fd38-40f5-9c68-4cc2715f7688"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Instituto Venezolano de los Seguros Sociales ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="0" width="305" height="30" uuid="6fb0df31-3f68-442f-8884-6d641a6d4ec2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ministerio del Poder Popular para la progresion del Trabajo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="112" y="50" width="330" height="30" uuid="91c04263-92af-453a-9623-6ce49d67ccd9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Sede}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="177" y="80" width="200" height="20" uuid="63115d59-6767-4768-b039-64fc733eaaac"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Departamento de Informatica]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="10" width="80" height="80" uuid="d7b62ba4-caf7-4733-a28b-7c45e487fe3a"/>
+				<imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="177" y="13" width="200" height="30" uuid="f0bbd972-00d9-4ae5-9ca6-cbb5640329c7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Gestion Mensual  del Departamento ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="277" y="60" width="100" height="20" uuid="2b0dcc3b-027d-488a-b733-af2b13368e86"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ANIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="60" width="100" height="20" uuid="9a138b56-bb26-4b8e-917f-35ebddc02152"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Mes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="38" width="200" height="22" uuid="f19d017d-0595-472a-bb62-40383079a712"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DEP}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="80" splitType="Stretch">
+			<textField>
+				<reportElement x="50" y="10" width="100" height="20" uuid="e7fe5fb3-ca4d-4fc7-b006-1d95df1f6d73"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Region}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="60" height="20" uuid="7d09319d-a9b9-42f2-a367-b1e78efaca81"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Region:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="50" width="100" height="30" uuid="2574b9fc-8c49-45ff-b1b4-68a5c8cb4cf4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="385ece80-800a-4689-bef9-afa9eed8cec6"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Actividad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="50" width="100" height="30" uuid="1fee0687-cf83-4868-bc9b-1beb901a1c13">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="44e4e1fd-b6f1-4ef6-9495-63c037165c9b"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="130" y="10" width="100" height="30" uuid="173dd257-1ed5-482d-9af2-e3802030ca65">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="385ece80-800a-4689-bef9-afa9eed8cec6"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Actividad}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="560" height="1" uuid="feccbaa5-8886-4632-b380-306940a7d8d3"/>
+			</line>
+			<textField>
+				<reportElement x="330" y="10" width="100" height="30" uuid="a0862998-7a44-4f0f-94b4-6e11de0a549d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="44e4e1fd-b6f1-4ef6-9495-63c037165c9b"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Totales}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="51" splitType="Stretch">
+			<textField>
+				<reportElement x="350" y="20" width="100" height="30" uuid="a063d2b4-29de-477f-b228-9f7ac0e3744a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="450" y="20" width="100" height="30" uuid="5f41c543-66a5-44bf-b34e-49fcc386ecc3"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="194" y="21" width="167" height="30" uuid="d51f6dbc-0d7d-425b-aa70-419928b21f17"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="240" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="180" height="20" uuid="98e8a678-b727-475a-931e-cb36dbc6277d"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de Incidentes en el Mes:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="177" y="10" width="100" height="20" uuid="1c4531f6-390d-43f7-8dc1-7f936330aac1"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Totales1}]]></textFieldExpression>
+			</textField>
+			<pieChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="40" width="550" height="200" uuid="3fad2723-9d94-4497-a749-b1321e1753b5"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{Actividad}]]></keyExpression>
+					<valueExpression><![CDATA[$F{Totales}]]></valueExpression>
+					<labelExpression><![CDATA[$F{Totales}.toString()]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+		</band>
+	</summary>
+</jasperReport>

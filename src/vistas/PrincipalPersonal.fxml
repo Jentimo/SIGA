@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="fondo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.PrincipalPersonalController">
+   <top>
+      <MenuBar fx:id="Mymenu" prefHeight="33.0" prefWidth="600.0" stylesheets="@../Otros/fullpackstyling.css" BorderPane.alignment="CENTER">
+        <menus>
+            <Menu fx:id="Service" mnemonicParsing="false" text="Sevicio ">
+              <items>
+                <MenuItem fx:id="Report" mnemonicParsing="false" text="Reporte" />
+                  <MenuItem fx:id="PC" mnemonicParsing="false" text="Computador" />
+                  <MenuItem fx:id="Active" mnemonicParsing="false" text="Actividades" />
+              </items>
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/servicio-tecnico.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

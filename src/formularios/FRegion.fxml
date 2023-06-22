@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="227.0" prefWidth="355.0" style="-fx-background-color: #4baff2;" stylesheets="@../Otros/fullpackstyling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fcontroladores.FRegionController">
+   <children>
+      <VBox prefHeight="256.0" prefWidth="355.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="79.0" prefWidth="355.0">
+               <children>
+                  <Label fx:id="label" text="Formulario Region" textFill="WHITE" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Indique el nombre " textFill="#fff9f9">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <JFXTextField fx:id="text" styleClass="jftextfield" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="189.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ButtonBar prefHeight="40.0" prefWidth="200.0">
+                    <buttons>
+                        <JFXButton fx:id="cancel" prefHeight="32.0" prefWidth="109.0" text="Cancelar" />
+                        <JFXButton fx:id="go" prefHeight="33.0" prefWidth="95.0" text="Aceptar" />
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

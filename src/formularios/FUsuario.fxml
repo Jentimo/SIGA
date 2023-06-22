@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="414.0" prefWidth="330.0" style="-fx-background-color: #4baff2;" stylesheets="@../Otros/fullpackstyling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fcontroladores.FUsuarioController">
+   <children>
+      <VBox prefHeight="414.0" prefWidth="330.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="330.0">
+               <children>
+                  <Label text="Nuevo Usuario" textFill="WHITE" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="77.0" prefWidth="330.0">
+               <children>
+                  <Label prefHeight="20.0" prefWidth="66.0" text="Cedula" textFill="WHITE" />
+                  <JFXTextField fx:id="Cedula" prefHeight="25.0" prefWidth="241.0" styleClass="jftextfield" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="87.0" prefHeight="71.0" prefWidth="330.0">
+               <children>
+                  <Label prefHeight="20.0" prefWidth="66.0" text="Nombre" textFill="WHITE" />
+                  <JFXTextField fx:id="Nombre" prefHeight="25.0" prefWidth="241.0" styleClass="jftextfield" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="164.0" prefHeight="71.0" prefWidth="330.0">
+               <children>
+                  <Label prefHeight="20.0" prefWidth="125.0" text="Tipo de Usuario" textFill="WHITE" />
+                  <JFXComboBox fx:id="userType" prefHeight="25.0" prefWidth="166.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="299.0" prefHeight="52.0" prefWidth="330.0" spacing="10.0">
+               <children>
+                  <JFXCheckBox fx:id="Pass" styleClass="CheckBox" text="Reiniciar Contraseña" textFill="WHITE" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="70.0" prefWidth="330.0" spacing="10.0">
+               <children>
+                  <JFXButton fx:id="Cancel" prefHeight="27.0" prefWidth="84.0" text="Cancelar" />
+                  <JFXButton fx:id="Go" prefHeight="28.0" prefWidth="81.0" text="Continuar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="345.0" style="-fx-background-color: #4baff2;" stylesheets="@../Otros/fullpackstyling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fcontroladores.FReporteController">
+   <children>
+      <VBox prefHeight="453.0" prefWidth="345.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="55.0" prefWidth="345.0">
+               <children>
+                  <Label fx:id="label1" text="Registrar Actividad" textFill="WHITE" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="191.0" prefHeight="78.0" prefWidth="345.0" spacing="10.0">
+               <children>
+                  <Label text="Departamento /sede" textFill="WHITE" />
+                  <JFXTextField fx:id="depsed" prefHeight="32.0" prefWidth="107.0" />
+                  <JFXButton fx:id="search" text="Buscar" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="78.0" prefWidth="345.0" spacing="10.0">
+               <children>
+                  <Label text="Fecha de inicio" textFill="WHITE" />
+                  <JFXDatePicker fx:id="inicio" defaultColor="#645f5f" prefHeight="22.0" prefWidth="148.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="123.0" prefHeight="78.0" prefWidth="345.0" spacing="10.0">
+               <children>
+                  <Label text="Fecha de culminacion" textFill="WHITE" />
+                  <JFXDatePicker fx:id="ffinal" defaultColor="#645f5f" prefHeight="22.0" prefWidth="148.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="88.0" prefHeight="78.0" prefWidth="345.0" spacing="10.0">
+               <children>
+                  <Label text="Tipo actividad" textFill="WHITE" />
+                  <ComboBox fx:id="actividad" prefHeight="22.0" prefWidth="219.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="166.0" prefHeight="78.0" prefWidth="345.0" spacing="10.0">
+               <children>
+                  <Label text="Computador" textFill="WHITE" />
+                  <JFXTextField fx:id="codigo" prefHeight="25.0" prefWidth="131.0" />
+                  <JFXTextField fx:id="Ncomputador" prefHeight="25.0" prefWidth="71.0">
+                     <tooltip>
+                        <Tooltip text="Numero de equipo">
+                           <font>
+                              <Font name="Roboto Black" size="14.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="244.0" prefHeight="78.0" prefWidth="345.0" spacing="10.0">
+               <children>
+                  <Label text="Descripcion" textFill="WHITE" />
+                  <TextArea fx:id="Descripcion" prefHeight="78.0" prefWidth="244.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="299.0" prefHeight="78.0" prefWidth="345.0" spacing="10.0">
+               <children>
+                  <ButtonBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="78.0" prefWidth="277.0">
+                    <buttons>
+                        <JFXButton fx:id="Cancelar" text="Cancelar" />
+                        <JFXButton fx:id="Registrar" text="Registrar" />
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

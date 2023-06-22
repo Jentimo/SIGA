@@ -1,0 +1,27 @@
+import java.util.*;
+
+import java.util.regex.Matcher;
+
+import java.util.regex.Pattern;
+
+public class Main {
+ 
+   public static void main(String[] args) throws Exception {
+  
+      // Your code here!
+ 
+//esto es para el video que vistes de reemplazar 2 o mas espacion por uno solo
+       
+      String probar= "    ¿Hola       Como       estas?   ";
+ 
+     Pattern phonePattern = Pattern.compile("\s{2,}");
+   
+   Matcher phoneMatcher = phonePattern.matcher(probar);
+
+aqui lo reemplaza      
+ System.out.print(probar.replaceAll("\s{2,}"," "));
+  
+debes insertar una funcion dende quites todos los espacion en blanco y lo mandes a un lowerCase para comparar. 
+}
+
+}
